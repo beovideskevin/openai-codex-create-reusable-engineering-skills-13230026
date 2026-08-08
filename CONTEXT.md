@@ -14,4 +14,6 @@ This is the shared language for the Red30 CRM domain. It is a glossary, not a pr
 
 **LeadRepo**: the data seam for leads and activities. Services and tests cross this interface.
 
-<!-- Add Score and Tier only after the requirements lesson defines them. -->
+**Score**: the whole-number sum of points contributed by every activity in a lead's history.
+
+**Tier**: the label derived from Score. Hot is 50 or more, warm is 20 to 49, and cold is below 20.
