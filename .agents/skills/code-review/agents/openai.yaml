@@ -1,0 +1,7 @@
+interface:
+  display_name: "Code Review"
+  short_description: "Review a planned change with execution evidence"
+  default_prompt: "Use $code-review to verify this change against its plan and report actionable findings."
+
+policy:
+  allow_implicit_invocation: false
