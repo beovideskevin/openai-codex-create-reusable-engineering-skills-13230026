@@ -1,0 +1,7 @@
+interface:
+  display_name: "Slice Work"
+  short_description: "Decompose a solution into testable vertical units"
+  default_prompt: "Use $slice-work to turn this accepted solution into dependency-ordered vertical slices."
+
+policy:
+  allow_implicit_invocation: false
