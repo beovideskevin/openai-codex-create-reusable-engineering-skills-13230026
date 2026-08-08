@@ -1,0 +1,7 @@
+interface:
+  display_name: "PRD"
+  short_description: "Turn a feature request into testable requirements"
+  default_prompt: "Use $prd to turn this feature request into a focused, testable requirement document."
+
+policy:
+  allow_implicit_invocation: false

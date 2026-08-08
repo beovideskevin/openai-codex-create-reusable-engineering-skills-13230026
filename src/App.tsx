@@ -39,7 +39,7 @@ export default function App() {
         {prototypeMode ? (
           <><strong>Prototype:</strong> mocked scores make the next lead to call visible. Values are unconfirmed.</>
         ) : (
-          <><strong>Course starter:</strong> Red30 CRM is ready. Add <code>?prototype=lead-scoring</code> to preview the idea.</>
+          <><strong>Requirements lesson:</strong> read <code>BRIEF.md</code>, then invoke <code>$prd</code> in Codex.</>
         )}
       </div>
 

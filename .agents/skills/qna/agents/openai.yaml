@@ -1,0 +1,4 @@
+interface:
+  display_name: "QnA"
+  short_description: "Resolve product ambiguity one question at a time"
+  default_prompt: "Use $qna to resolve the open decisions in this request one question at a time."
