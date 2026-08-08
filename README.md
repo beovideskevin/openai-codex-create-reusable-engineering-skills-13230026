@@ -1,30 +1,20 @@
-# Video 0 Begin: Set Up the CRM
+# Video 0 End: Verified CRM Baseline
 
-You are at the starting state for the setup video. The goal is to prove that the repository, tests, app, and first Codex skill work on your machine.
+This is the reference state after the setup video. No feature code has been added yet.
 
-## 1. What to do
+## 1. What this branch proves
 
-1. Install the locked dependencies with `npm ci`.
-2. Run `npm test` and confirm the baseline is green.
-3. Run `npm run typecheck`.
-4. Start the app with `npm run dev`, then open `http://localhost:5173`.
-5. Open `.agents/skills/skill-design/SKILL.md` and scan its headings only.
+1. The CRM installs and runs from a clean clone.
+2. The baseline checks pass before any course feature work begins.
 
-## 2. What you should see
+## 2. What to inspect
 
-- Three passing baseline service tests.
-- A working Red30 CRM lead list.
-- A lead detail panel and Log reply action.
-- One repository skill: `skill-design`.
+- Run `npm test`: three tests should pass.
+- Run `npm run typecheck`: TypeScript should pass.
+- Run `npm run dev`: the lead list and detail panel should render.
+- Open `.agents/skills/skill-design/SKILL.md`: this is the only course skill installed.
 
-## Follow the video
+## Continue
 
-1. Identify the setup problem: learners need the same reproducible starting state.
-2. Introduce snapshot branches as the solution.
-3. Preview the `skill-design` skill.
-4. Scan its portable-core, metadata, activation, process, and hard-rule headings.
-5. Run the setup commands and open the app.
-6. Compare what you see with the checklist above.
-
-Reference result: `course/00-setup-end`.
+Switch to `course/01-design-begin` for the first skills lesson.
 
