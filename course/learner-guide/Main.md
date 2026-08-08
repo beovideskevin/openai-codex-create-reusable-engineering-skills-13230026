@@ -58,6 +58,7 @@ Use a fresh clone or worktree for a clean rerun. Do not discard an uncommitted e
 
 ## Core resources
 
+- [Course repository](https://github.com/dswh/lil_codex_reusable_skills)
 - [Skills in ChatGPT and Codex](https://help.openai.com/en/articles/20001066)
 - [Agent Skills specification](https://agentskills.io/specification)
 - [AGENTS.md](https://agents.md)

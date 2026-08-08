@@ -15,7 +15,7 @@ Clone one snapshot branch, install the locked dependencies, run the checks, and 
 ## Steps
 
 ```bash
-git clone --branch course/00-setup-begin <course-repository-url> codex-reusable-skills-crm
+git clone --branch course/00-setup-begin https://github.com/dswh/lil_codex_reusable_skills.git codex-reusable-skills-crm
 cd codex-reusable-skills-crm
 npm ci
 npm test
