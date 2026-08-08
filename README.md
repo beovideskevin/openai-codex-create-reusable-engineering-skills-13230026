@@ -1,32 +1,22 @@
-# Video 6 Begin: Review and Document the Result
+# Video 6 End: Reviewed and Documented Feature
 
-You are at the starting state for the review video. The feature works, but it has not yet been judged against its accepted plan or documented from observed behavior.
+This branch contains the final reference result for the product workflow.
 
-## 1. What to do
+## 1. What this branch contains
 
-1. Read the requirement, solution, plan, and `code-review` skill headings.
-2. Copy `course/prompts/06-review.md` and invoke `$code-review`.
-3. Review `course/05-build-begin...course/05-build-end`.
-4. Run every required repository check.
-5. Exercise list ordering, detail consistency, and reply updates in the browser.
-6. Persist the review and verified feature documentation, as authorized by the lesson prompt.
+1. An evidence-backed review of the Lead Scoring implementation.
+2. Feature documentation limited to behavior that was tested or observed.
 
-## 2. What you should see
+## 2. What to inspect
 
-- A review scope limited to the product implementation.
-- Evidence for every acceptance criterion.
-- Tests, typecheck, production build, and rendered behavior recorded separately.
-- `docs/reviews/lead-scoring.md` and `docs/features/lead-scoring.md`.
-- No implementation edits mixed into the review.
+- `docs/reviews/lead-scoring.md`: scope, checks, behavior evidence, acceptance mapping, and verdict.
+- `docs/features/lead-scoring.md`: verified scoring and UI behavior only.
+- The review diff: this branch should add documentation, not implementation fixes.
+- The final commands: eight tests, typecheck, and production build should pass.
 
-## Follow the video
+## Course result
 
-1. Show why a green build alone does not prove plan compliance.
-2. Explain independent execution evidence as the solution.
-3. Introduce `code-review`.
-4. Show its scope, checks, behavior, evidence, and persistence headings.
-5. Run the review against the exact build range.
-6. Inspect the verdict, evidence matrix, and verified feature documentation.
+You now have a reusable workflow from prototype to requirements, research, slicing, implementation, and review.
 
-Reference result: `course/06-review-end`.
+Open `course/final` for all learner guides, prompts, recording scripts, and the end-state report.
 
