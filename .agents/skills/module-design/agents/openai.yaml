@@ -1,0 +1,4 @@
+interface:
+  display_name: "Module Design"
+  short_description: "Design deep modules around clean, testable seams"
+  default_prompt: "Use $module-design to shape a small interface around a deep, testable module."

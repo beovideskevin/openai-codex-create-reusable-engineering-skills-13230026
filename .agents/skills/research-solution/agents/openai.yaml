@@ -1,0 +1,7 @@
+interface:
+  display_name: "Research Solution"
+  short_description: "Research risks and specify a buildable solution"
+  default_prompt: "Use $research-solution to evaluate the risks and specify a solution for this requirement."
+
+policy:
+  allow_implicit_invocation: false
