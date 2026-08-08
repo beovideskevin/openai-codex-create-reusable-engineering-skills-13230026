@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { makeTestRepo } from '../test/makeTestRepo'
 import { createLeadService } from './leadService'
 
-// These tests describe behaviour through the LeadRepo / service interface — they
+// These tests describe behaviour through the LeadRepo / service interface. They
 // say nothing about how data is stored, so they survive any refactor. Use them
 // as the template when you TDD Lead Scoring.
 

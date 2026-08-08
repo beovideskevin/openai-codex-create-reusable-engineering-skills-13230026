@@ -1,7 +1,7 @@
 import { InMemoryLeadRepo } from './leadRepo'
 import type { Activity, ActivityKind, Lead, LeadStatus } from './types'
 
-// A small, hand-built slice of Relay's book of business. In production this is
+// A small, hand-built slice of Red30 CRM's book of business. In production this is
 // ~40,000 leads (that's the "retroactive backfill" the brief worries about);
 // here we seed a representative ~30 so the list is real to work against.
 
@@ -13,7 +13,7 @@ interface LeadSeed {
   owner: string
   status: LeadStatus
   created: string // YYYY-MM-DD
-  last: string // YYYY-MM-DD — lastActivityAt
+  last: string // YYYY-MM-DD, lastActivityAt
   // recent activity, most-recent last
   acts?: Array<[ActivityKind, string /* YYYY-MM-DD */]>
 }

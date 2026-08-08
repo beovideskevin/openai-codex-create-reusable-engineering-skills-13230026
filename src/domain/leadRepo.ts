@@ -2,13 +2,12 @@ import type { Activity, ActivityKind, Lead } from './types'
 
 /**
  * The data seam for leads and their activity. Services and tests both cross
- * THIS interface — it's the test surface. The in-memory adapter below is what
+ * this interface. It is the test surface. The in-memory adapter below is what
  * the app and tests run on today; a real Postgres adapter would satisfy the
  * same interface without callers changing.
  *
- * NOTE FOR THE CLASS: when you add Lead Scoring you'll likely add a place to
- * persist a `ScoreEvent` and read a lead's score. Decide whether that lives
- * behind this interface or a new `scoringService` — that's a `/deepen` question.
+ * EXTENSION POINT: Lead Scoring will need a way to turn activity into a useful
+ * ordering without leaking storage details into callers.
  */
 export interface LeadRepo {
   getLeads(): Lead[]

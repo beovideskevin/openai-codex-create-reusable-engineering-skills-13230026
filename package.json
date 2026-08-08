@@ -1,9 +1,9 @@
 {
-  "name": "relay-crm",
+  "name": "red30-crm",
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "Relay — a tiny CRM. The live-build starter for the STDD master class: ship Lead Scoring end-to-end.",
+  "description": "The CRM starter for a hands-on course about reusable Codex skills.",
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",

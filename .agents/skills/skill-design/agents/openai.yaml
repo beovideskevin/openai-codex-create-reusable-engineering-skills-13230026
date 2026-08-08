@@ -1,0 +1,7 @@
+interface:
+  display_name: "Skill Design"
+  short_description: "Design portable skills with Codex metadata"
+  default_prompt: "Use $skill-design to audit these skills for portability, activation, and Codex compatibility."
+
+policy:
+  allow_implicit_invocation: false

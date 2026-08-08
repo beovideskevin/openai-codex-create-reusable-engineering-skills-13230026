@@ -20,19 +20,18 @@ export default function App() {
     <div className="app">
       <header className="topbar">
         <div className="brand">
-          <span className="brand-mark">◈</span> Relay
+          <span className="brand-mark">◈</span> Red30 CRM
         </div>
         <nav className="nav">
           <span className="nav-item active">Leads</span>
           <span className="nav-item">Deals</span>
           <span className="nav-item">Reports</span>
         </nav>
-        <div className="user">priya@relay.app</div>
+        <div className="user">priya@red30.com</div>
       </header>
 
       <div className="session-banner">
-        <strong>Master class:</strong> you're about to build <strong>Lead Scoring</strong>. Read{' '}
-        <code>BRIEF.md</code>, then run <code>/align</code> to start.
+        <strong>Course starter:</strong> Red30 CRM is ready. Follow <code>README.md</code> to begin.
       </div>
 
       <main className="content">

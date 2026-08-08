@@ -2,7 +2,7 @@ import { InMemoryLeadRepo } from '../domain/leadRepo'
 import type { Lead } from '../domain/types'
 
 /**
- * A tiny, deterministic repo for tests — the test-side adapter behind the same
+ * A tiny, deterministic repo for tests: the test-side adapter behind the same
  * LeadRepo interface the app uses. Build exactly the leads a test needs.
  *
  * This is the pattern Lead Scoring's tests should follow: drive the real

@@ -27,8 +27,8 @@ export function LeadRow({
         <span className={`status status-${lead.status}`}>{statusLabel[lead.status]}</span>
       </td>
       <td className="muted">{lead.owner}</td>
-      {/* NOTE FOR THE CLASS: today there's no "worth" column — only recency.
-          The score / tier badge you build goes here, and the list re-sorts by it. */}
+      {/* EXTENSION POINT: today there is no "worth" column, only recency.
+          A score or tier badge could live here if the requirement selects it. */}
       <td className="muted">{relativeTime(lead.lastActivityAt)}</td>
       <td className="cell-action">
         <button

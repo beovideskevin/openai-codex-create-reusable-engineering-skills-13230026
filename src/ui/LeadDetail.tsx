@@ -25,9 +25,7 @@ export function LeadDetail({
         </div>
       </div>
 
-      {/* NOTE FOR THE CLASS: this header is the other place the brief mentions a
-          score could live ("list badge / detail header"). A `/spike` can help
-          you decide which placement reads as "call this one first." */}
+      {/* EXTENSION POINT: this header could carry a future prioritization signal. */}
 
       <dl className="detail-meta">
         <div><dt>Status</dt><dd><span className={`status status-${lead.status}`}>{statusLabel[lead.status]}</span></dd></div>
