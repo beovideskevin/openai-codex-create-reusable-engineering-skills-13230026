@@ -1,14 +1,17 @@
 import type { Activity, Lead } from '../domain/types'
+import type { PrototypeScore } from '../prototypes/leadScoringPrototype'
 import { activityLabel, initials, relativeTime, statusLabel } from './format'
 
 export function LeadDetail({
   lead,
   activities,
   onClose,
+  prototypeScore,
 }: {
   lead: Lead
   activities: Activity[]
   onClose: () => void
+  prototypeScore?: PrototypeScore
 }) {
   return (
     <aside className="detail">
@@ -25,7 +28,15 @@ export function LeadDetail({
         </div>
       </div>
 
-      {/* EXTENSION POINT: this header could carry a future prioritization signal. */}
+      {prototypeScore && (
+        <div className={`priority-card priority-${prototypeScore.tier}`}>
+          <div>
+            <span className="priority-label">Mocked priority</span>
+            <strong>{prototypeScore.points} points · {prototypeScore.tier}</strong>
+          </div>
+          <p>{prototypeScore.reason}</p>
+        </div>
+      )}
 
       <dl className="detail-meta">
         <div><dt>Status</dt><dd><span className={`status status-${lead.status}`}>{statusLabel[lead.status]}</span></dd></div>

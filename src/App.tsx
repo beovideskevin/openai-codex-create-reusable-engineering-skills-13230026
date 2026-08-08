@@ -3,6 +3,7 @@ import { seededRepo } from './domain/seed'
 import { createLeadService } from './services/leadService'
 import { LeadList } from './ui/LeadList'
 import { LeadDetail } from './ui/LeadDetail'
+import { prototypeScore } from './prototypes/leadScoringPrototype'
 
 export default function App() {
   // One in-memory repo for the session; a `tick` forces a re-read after writes.
@@ -13,7 +14,11 @@ export default function App() {
 
   const [selectedId, setSelectedId] = useState<string | null>(null)
 
+  const prototypeMode = new URLSearchParams(window.location.search).get('prototype') === 'lead-scoring'
   const leads = service.listLeads()
+  const displayedLeads = prototypeMode
+    ? [...leads].sort((a, b) => prototypeScore(b.id).points - prototypeScore(a.id).points)
+    : leads
   const selected = selectedId ? service.getLead(selectedId) : undefined
 
   return (
@@ -31,19 +36,26 @@ export default function App() {
       </header>
 
       <div className="session-banner">
-        <strong>Course starter:</strong> Red30 CRM is ready. Follow <code>README.md</code> to begin.
+        {prototypeMode ? (
+          <><strong>Prototype:</strong> mocked scores make the next lead to call visible. Values are unconfirmed.</>
+        ) : (
+          <><strong>Course starter:</strong> Red30 CRM is ready. Add <code>?prototype=lead-scoring</code> to preview the idea.</>
+        )}
       </div>
 
       <main className="content">
         <section className="leads-panel">
           <div className="panel-head">
             <h1>Leads</h1>
-            <span className="count">{leads.length} leads · sorted by recency</span>
+            <span className="count">
+              {displayedLeads.length} leads · sorted by {prototypeMode ? 'mocked score' : 'recency'}
+            </span>
           </div>
           <LeadList
-            leads={leads}
+            leads={displayedLeads}
             selectedId={selectedId}
             onSelect={setSelectedId}
+            scoreForLead={prototypeMode ? prototypeScore : undefined}
             onLogReply={(id) => {
               service.logReply(id)
               refresh()
@@ -55,6 +67,7 @@ export default function App() {
           <LeadDetail
             lead={selected}
             activities={service.getActivities(selected.id)}
+            prototypeScore={prototypeMode ? prototypeScore(selected.id) : undefined}
             onClose={() => setSelectedId(null)}
           />
         )}
