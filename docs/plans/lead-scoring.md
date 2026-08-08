@@ -10,6 +10,7 @@ Read existing activity through `LeadRepo`, calculate a score and tier through on
 
 ## Unit 1: Prioritize the leads list
 
+- Status: complete.
 - Builds: every existing lead receives a real score and tier, and the list shows the highest score first.
 - Contracts: `LeadTier`, `LeadScore`, `scoreActivities(activities)`, and `ScoredLead` from the accepted solution.
 - Test first: given leads with different activity histories, `listLeads` returns their expected points and tiers in score order.
@@ -19,6 +20,7 @@ Read existing activity through `LeadRepo`, calculate a score and tier through on
 
 ## Unit 2: Keep the detail view consistent
 
+- Status: complete.
 - Builds: opening a lead shows the same score and tier as its row.
 - Contracts: `leadService.getLead(id): ScoredLead | undefined`.
 - Test first: the same lead returned from `listLeads` and `getLead` has identical points and tier.
@@ -28,6 +30,7 @@ Read existing activity through `LeadRepo`, calculate a score and tier through on
 
 ## Unit 3: React to a new reply
 
+- Status: complete.
 - Builds: logging an email reply adds 25 points and immediately reorders the visible queue when needed.
 - Contracts: existing `leadService.logReply(leadId)` plus the scored read contracts from Units 1 and 2.
 - Test first: after `logReply`, the target lead's score increases by 25 and its position reflects score, recency, and name tie-breakers.
@@ -49,3 +52,9 @@ Read existing activity through `LeadRepo`, calculate a score and tier through on
 ## Open questions
 
 None.
+
+## Verification
+
+- `npm test`: 8 tests passed.
+- `npm run typecheck`: passed.
+- `npm run build`: passed.

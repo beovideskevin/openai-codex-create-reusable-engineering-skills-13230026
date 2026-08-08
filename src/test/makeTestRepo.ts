@@ -1,5 +1,5 @@
 import { InMemoryLeadRepo } from '../domain/leadRepo'
-import type { Lead } from '../domain/types'
+import type { Activity, Lead } from '../domain/types'
 
 /**
  * A tiny, deterministic repo for tests: the test-side adapter behind the same
@@ -21,6 +21,9 @@ const baseLead = (over: Partial<Lead> & Pick<Lead, 'id'>): Lead => ({
   ...over,
 })
 
-export function makeTestRepo(leads: Array<Partial<Lead> & Pick<Lead, 'id'>>): InMemoryLeadRepo {
-  return new InMemoryLeadRepo({ leads: leads.map(baseLead) })
+export function makeTestRepo(
+  leads: Array<Partial<Lead> & Pick<Lead, 'id'>>,
+  activities: Activity[] = [],
+): InMemoryLeadRepo {
+  return new InMemoryLeadRepo({ leads: leads.map(baseLead), activities })
 }

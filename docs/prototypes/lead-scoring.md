@@ -1,5 +1,7 @@
 # Prototype: Lead Scoring
 
+Status: superseded by the production implementation. Switch to `course/01-design-end` to run the isolated mocked preview.
+
 ## Question
 
 Can a score and tier make the next lead to contact obvious without opening every record?

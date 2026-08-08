@@ -1,27 +1,35 @@
 import type { LeadRepo } from '../domain/leadRepo'
+import { scoreActivities, type ScoredLead } from '../domain/scoring'
 import type { Activity, Lead } from '../domain/types'
 
 /**
  * Read/shape leads for the UI. Built over the LeadRepo seam so it's testable
  * through this interface (see leadService.test.ts).
  *
- * Today `listLeads` sorts by recency — which is exactly the problem the brief
- * names: "the hot ones go cold." A lead that just got auto-created outranks one
- * that booked a demo last week, because all we know is *when*, not *worth*.
- * Lead Scoring is what fixes the ordering.
+ * Lead Scoring stays above the repository seam so storage remains concerned
+ * only with leads and activities. Both list and detail reads use the same
+ * projection, which keeps their priority values consistent.
  */
 export function createLeadService(repo: LeadRepo) {
+  const scoreLead = (lead: Lead): ScoredLead => ({
+    ...lead,
+    ...scoreActivities(repo.getActivities(lead.id)),
+  })
+
   return {
-    /** All leads, most-recently-active first. */
-    listLeads(): Lead[] {
-      return repo.getLeads().sort((a, b) => {
+    /** All leads, highest buying intent first. */
+    listLeads(): ScoredLead[] {
+      return repo.getLeads().map(scoreLead).sort((a, b) => {
+        const byScore = b.points - a.points
+        if (byScore !== 0) return byScore
         const byRecency = b.lastActivityAt.localeCompare(a.lastActivityAt)
         return byRecency !== 0 ? byRecency : a.name.localeCompare(b.name)
       })
     },
 
-    getLead(id: string): Lead | undefined {
-      return repo.getLead(id)
+    getLead(id: string): ScoredLead | undefined {
+      const lead = repo.getLead(id)
+      return lead ? scoreLead(lead) : undefined
     },
 
     getActivities(leadId: string): Activity[] {
