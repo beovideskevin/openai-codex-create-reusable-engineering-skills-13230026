@@ -20,7 +20,7 @@ AI Consultant | Founder of Agentiwise AI Agency
 
                             
 
-Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/harshit-tyagi?u=104)
+Check out my other courses on [LinkedIn Learning].(https://www.linkedin.com/learning/instructors/harshit-tyagi?u=104)
 
 
 [0]: # (Replace these placeholder URLs with actual course URLs)
