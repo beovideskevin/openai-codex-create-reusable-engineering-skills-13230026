@@ -18,8 +18,12 @@ AI coding agents become significantly more effective when they're guided by reus
 Harshit Tyagi - 
 AI Consultant | Founder of Agentiwise AI Agency
 
-                            
+Harshit Tyagi is an AI consultant and the founder of Agentiwise AI Agency.
 
+Harshit deploys proven AI solutions that help enterprises become AI first. At Agentiwise, he supports organizations in implementing AI systems, building internal tools, and adopting AI with clear focus on ROI.
+
+He has also taught AI to a large global audience through his courses, corporate training, and YouTube content, which has helped him sharpen a practical style of explaining complex business ideas so they're easier to understand and apply.
+                            
 Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/harshit-tyagi?u=104).
 
 
