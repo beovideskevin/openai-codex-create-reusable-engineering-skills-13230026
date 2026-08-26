@@ -4,25 +4,14 @@ This is the repository for the LinkedIn Learning course `OpenAI Codex: Create Re
 ![lil-thumbnail-url]
 
 ## Course Description
+AI coding agents become significantly more effective when they're guided by reusable skills that encode how your team builds software. In this course, you'll learn how to create and apply engineering skills in OpenAI Codex to support the entire software development lifecycle, from requirements gathering through implementation and release. Using a realistic feature-development workflow, you'll design skills that help agents clarify requirements, research technical risks, plan implementation work, write code, and review results. Along the way, you'll learn practical techniques for making agent behavior more predictable, improving development quality, and reducing rework. By the end of the course, you'll have a repeatable framework for building reusable Codex skills that can accelerate future engineering projects while maintaining consistent standards.
 
-_See the readme file in the main branch for updated instructions and information._
-## Instructions
-This repository has branches for each of the videos in the course. You can use the branch pop up menu in github to switch to a specific branch and take a look at the course at that stage, or you can add `/tree/BRANCH_NAME` to the URL to go to the branch you want to access.
-
-## Branches
-The branches are structured to correspond to the videos in the course. The naming convention is `CHAPTER#_MOVIE#`. As an example, the branch named `02_03` corresponds to the second chapter and the third video in that chapter. 
-Some branches will have a beginning and an end state. These are marked with the letters `b` for "beginning" and `e` for "end". The `b` branch contains the code as it is at the beginning of the movie. The `e` branch contains the code as it is at the end of the movie. The `main` branch holds the final state of the code when in the course.
-
-When switching from one exercise files branch to the next after making changes to the files, you may get a message like this:
-
-    error: Your local changes to the following files would be overwritten by checkout:        [files]
-    Please commit your changes or stash them before you switch branches.
-    Aborting
-
-To resolve this issue:
-	
-    Add changes to git using this command: git add .
-	Commit changes using this command: git commit -m "some message"
+- Create reusable Codex skills that encode engineering workflows.
+- Generate requirements documents from feature requests using AI-assisted workflows.
+- Produce technical implementation plans that identify risks and design decisions.
+- Break down complex features into testable, end-to-end implementation units.
+- Implement features with test-driven, AI-assisted development practices.
+- Review AI-generated code against requirements, plans, and project standards.
 
 ## Installing
 1. To use these exercise files, you must have the following installed:
@@ -32,17 +21,16 @@ To resolve this issue:
 
 ## Instructor
 
-Instructor name
-
-Instructor description
+Harshit Tyagi - 
+AI Consultant | Founder of Agentiwise AI Agency
 
                             
 
-Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/).
+Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/](https://www.linkedin.com/learning/instructors/harshit-tyagi?u=104)).
 
 
 [0]: # (Replace these placeholder URLs with actual course URLs)
 
-[lil-course-url]: https://www.linkedin.com/learning/
-[lil-thumbnail-url]: https://media.licdn.com/dms/image/v2/D4E0DAQG0eDHsyOSqTA/learning-public-crop_675_1200/B4EZVdqqdwHUAY-/0/1741033220778?e=2147483647&v=beta&t=FxUDo6FA8W8CiFROwqfZKL_mzQhYx9loYLfjN-LNjgA
+[lil-course-url]: https://www.linkedin.com/learning/openai-codex-create-reusable-engineering-skills/design-skills-for-predictable-agent-behavior
+[lil-thumbnail-url]: https://media.licdn.com/dms/image/v2/D560DAQHgpmjlV3rvkA/learning-public-crop_675_1200/B56Z_72ubFHAAY-/0/1786636855259?e=2147483647&v=beta&t=boHrpjS2kPuYLcmkWN-QgXQHDF8GNv10My8W7EC9X44
 
