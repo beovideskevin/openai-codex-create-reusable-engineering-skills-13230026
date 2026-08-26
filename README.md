@@ -13,12 +13,6 @@ AI coding agents become significantly more effective when they're guided by reus
 - Implement features with test-driven, AI-assisted development practices.
 - Review AI-generated code against requirements, plans, and project standards.
 
-## Installing
-1. To use these exercise files, you must have the following installed:
-	- [list of requirements for course]
-2. Clone this repository into your local machine using the terminal (Mac), CMD (Windows), or a GUI tool like SourceTree.
-3. [Course-specific instructions]
-
 ## Instructor
 
 Harshit Tyagi - 
@@ -26,7 +20,7 @@ AI Consultant | Founder of Agentiwise AI Agency
 
                             
 
-Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/](https://www.linkedin.com/learning/instructors/harshit-tyagi?u=104)).
+Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/](https://www.linkedin.com/learning/instructors/harshit-tyagi?u=104))
 
 
 [0]: # (Replace these placeholder URLs with actual course URLs)
