@@ -3,8 +3,19 @@ import { seededRepo } from './domain/seed'
 import { createLeadService } from './services/leadService'
 import { LeadList } from './ui/LeadList'
 import { LeadDetail } from './ui/LeadDetail'
+import { LeadScoringPreview } from './ui/LeadScoringPreview'
 
 export default function App() {
+  const prototype = new URLSearchParams(window.location.search).get('prototype')
+
+  if (prototype === 'lead-scoring') {
+    return <LeadScoringPreview />
+  }
+
+  return <DefaultApp />
+}
+
+function DefaultApp() {
   // One in-memory repo for the session; a `tick` forces a re-read after writes.
   const repoRef = useRef(seededRepo())
   const service = useMemo(() => createLeadService(repoRef.current), [])

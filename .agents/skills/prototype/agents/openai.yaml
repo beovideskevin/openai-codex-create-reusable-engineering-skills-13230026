@@ -1,0 +1,7 @@
+interface:
+  display_name: "Prototype"
+  short_description: "Build isolated UI previews with local unconfirmed data"
+  default_prompt: "Use $prototype to turn this feature idea into an isolated, runnable UI preview without changing the default product path."
+
+policy:
+  allow_implicit_invocation: false
