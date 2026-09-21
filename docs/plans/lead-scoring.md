@@ -16,6 +16,7 @@ Read existing activity through `LeadRepo`, calculate a score and tier through on
 - Acceptance: the list displays the numeric score and tier for every lead, including 0 points and cold for no activity.
 - Blocked by: none.
 - Parallel-safe: no.
+- Status: complete. Verified with `npx vitest run src/services/leadService.test.ts`, `npm test`, `npm run typecheck`, and `npm run build`.
 
 ## Unit 2: Keep the detail view consistent
 
@@ -25,6 +26,7 @@ Read existing activity through `LeadRepo`, calculate a score and tier through on
 - Acceptance: list and detail show one policy result for the selected lead.
 - Blocked by: Unit 1.
 - Parallel-safe: no.
+- Status: complete. Verified with `npx vitest run src/services/leadService.test.ts`, `npm test`, `npm run typecheck`, and `npm run build`.
 
 ## Unit 3: React to a new reply
 
@@ -34,6 +36,7 @@ Read existing activity through `LeadRepo`, calculate a score and tier through on
 - Acceptance: the list and open detail update without reload and display the new shared priority.
 - Blocked by: Units 1 and 2.
 - Parallel-safe: no.
+- Status: complete. Verified with `npx vitest run src/services/leadService.test.ts`, `npm test`, `npm run typecheck`, `npm run build`, and rendered interaction at `http://localhost:5175/`.
 
 ## Requirement coverage
 

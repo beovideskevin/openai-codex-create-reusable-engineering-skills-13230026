@@ -1,41 +1,51 @@
-import type { LeadRepo } from '../domain/leadRepo'
-import type { Activity, Lead } from '../domain/types'
+import type { LeadRepo } from "../domain/leadRepo";
+import { scoreActivities } from "../domain/leadScoring";
+import type { LeadScore } from "../domain/leadScoring";
+import type { Activity, Lead } from "../domain/types";
 
-/**
- * Read/shape leads for the UI. Built over the LeadRepo seam so it's testable
- * through this interface (see leadService.test.ts).
- *
- * Today `listLeads` sorts by recency — which is exactly the problem the brief
- * names: "the hot ones go cold." A lead that just got auto-created outranks one
- * that booked a demo last week, because all we know is *when*, not *worth*.
- * Lead Scoring is what fixes the ordering.
- */
+export interface ScoredLead extends Lead {
+  priority: LeadScore;
+}
+
+/** Read and shape leads for the UI through the LeadRepo seam. */
 export function createLeadService(repo: LeadRepo) {
   return {
-    /** All leads, most-recently-active first. */
-    listLeads(): Lead[] {
-      return repo.getLeads().sort((a, b) => {
-        const byRecency = b.lastActivityAt.localeCompare(a.lastActivityAt)
-        return byRecency !== 0 ? byRecency : a.name.localeCompare(b.name)
-      })
+    /** All leads, prioritized by activity-derived score. */
+    listLeads(): ScoredLead[] {
+      return repo
+        .getLeads()
+        .map((lead) => ({
+          ...lead,
+          priority: scoreActivities(repo.getActivities(lead.id)),
+        }))
+        .sort((a, b) => {
+          const byScore = b.priority.points - a.priority.points;
+          if (byScore !== 0) return byScore;
+          const byRecency = b.lastActivityAt.localeCompare(a.lastActivityAt);
+          return byRecency !== 0 ? byRecency : a.name.localeCompare(b.name);
+        });
     },
 
-    getLead(id: string): Lead | undefined {
-      return repo.getLead(id)
+    getLead(id: string): ScoredLead | undefined {
+      const lead = repo.getLead(id);
+      if (!lead) return undefined;
+      return {
+        ...lead,
+        priority: scoreActivities(repo.getActivities(id)),
+      };
     },
 
     getActivities(leadId: string): Activity[] {
       return repo
         .getActivities(leadId)
-        .sort((a, b) => b.at.localeCompare(a.at))
+        .sort((a, b) => b.at.localeCompare(a.at));
     },
 
-    /** A lead replies to one of our emails. Records the activity (and, today,
-     *  just bumps recency). This is the seam Lead Scoring hooks into. */
+    /** A lead replies to one of our emails. */
     logReply(leadId: string): Activity {
-      return repo.recordActivity({ leadId, kind: 'email_reply' })
+      return repo.recordActivity({ leadId, kind: "email_reply" });
     },
-  }
+  };
 }
 
-export type LeadService = ReturnType<typeof createLeadService>
+export type LeadService = ReturnType<typeof createLeadService>;

@@ -1,5 +1,4 @@
-import type { Lead } from '../domain/types'
-import type { PrototypeScore } from '../prototypes/leadScoringPrototype'
+import type { ScoredLead } from '../services/leadService'
 import { LeadRow } from './LeadRow'
 
 export function LeadList({
@@ -7,13 +6,11 @@ export function LeadList({
   selectedId,
   onSelect,
   onLogReply,
-  scoreForLead,
 }: {
-  leads: Lead[]
+  leads: ScoredLead[]
   selectedId: string | null
   onSelect: (id: string) => void
   onLogReply: (id: string) => void
-  scoreForLead?: (id: string) => PrototypeScore
 }) {
   return (
     <table className="leads">
@@ -22,20 +19,19 @@ export function LeadList({
           <th>Lead</th>
           <th>Status</th>
           <th>Owner</th>
-          {scoreForLead && <th>Priority</th>}
+          <th>Priority</th>
           <th>Last activity</th>
           <th></th>
         </tr>
       </thead>
       <tbody>
-        {leads.map((lead: Lead) => (
+        {leads.map((lead) => (
           <LeadRow
             key={lead.id}
             lead={lead}
             selected={lead.id === selectedId}
             onSelect={onSelect}
             onLogReply={onLogReply}
-            prototypeScore={scoreForLead?.(lead.id)}
           />
         ))}
       </tbody>

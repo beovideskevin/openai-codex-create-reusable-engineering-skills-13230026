@@ -1,5 +1,4 @@
-import type { Lead } from '../domain/types'
-import type { PrototypeScore } from '../prototypes/leadScoringPrototype'
+import type { ScoredLead } from '../services/leadService'
 import { initials, relativeTime, statusLabel } from './format'
 
 export function LeadRow({
@@ -7,13 +6,11 @@ export function LeadRow({
   selected,
   onSelect,
   onLogReply,
-  prototypeScore,
 }: {
-  lead: Lead
+  lead: ScoredLead
   selected: boolean
   onSelect: (id: string) => void
   onLogReply: (id: string) => void
-  prototypeScore?: PrototypeScore
 }) {
   return (
     <tr className={selected ? 'row selected' : 'row'} onClick={() => onSelect(lead.id)}>
@@ -30,12 +27,10 @@ export function LeadRow({
         <span className={`status status-${lead.status}`}>{statusLabel[lead.status]}</span>
       </td>
       <td className="muted">{lead.owner}</td>
-      {prototypeScore && (
-        <td>
-          <span className={`score score-${prototypeScore.tier}`}>{prototypeScore.points}</span>
-          <span className={`tier tier-${prototypeScore.tier}`}>{prototypeScore.tier}</span>
-        </td>
-      )}
+      <td>
+        <span className={`score score-${lead.priority.tier}`}>{lead.priority.points}</span>
+        <span className={`tier tier-${lead.priority.tier}`}>{lead.priority.tier}</span>
+      </td>
       <td className="muted">{relativeTime(lead.lastActivityAt)}</td>
       <td className="cell-action">
         <button
